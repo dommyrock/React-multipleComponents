@@ -85,10 +85,12 @@ class ChangeStateTest extends React.Component {
     });
   }
   render() {
+    let errorMsg = "todo";
+
     return (
       <div className="App">
         <button className="button5" onClick={this.onClickReset}>
-          Reset
+          Reset count
         </button>
 
         <h1>Count state:[{this.state.count}]</h1>

@@ -7,12 +7,13 @@ import TodoComponent from "./Components/Todo/Todo";
 import StateManagement from "./StateManagement";
 import EventHandlingInReact from "./EventHandlingInReact";
 import ChangingState from "./ChangingState";
-
+import LyfeCycleMethods from "./LifecycleMethods";
 ReactDOM.render(<App />, document.getElementById("root"));
-// Uncomment bellow to show separate component
+// Uncomment  bellow to show separate component &comment this line
 
 // ReactDOM.render(<Layout />, document.getElementById("root"));
 // ReactDOM.render(<TodoComponent />, document.getElementById("root"));
 // ReactDOM.render(<StateManagement />, document.getElementById("root"));
 // ReactDOM.render(<EventHandlingInReact />, document.getElementById("root"));
 // ReactDOM.render(<ChangingState />, document.getElementById("root"));
+// ReactDOM.render(<LyfeCycleMethods />, document.getElementById("root"));

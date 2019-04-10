@@ -13,7 +13,7 @@ import StateManagement from "./StateManagement";
 import EventHandlingInReact from "./EventHandlingInReact";
 import ChangingState from "./ChangingState";
 import CounterApp from "./Components/SeparateStateCounters/CounterApp";
-
+import LoggedInOut from "./Components/LoggedIn_Out/LoggedInOut";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -32,7 +32,8 @@ class App extends Component {
         <ChangingState />
         <hr />
         <Page />
-        <CounterApp />
+        {/* <CounterApp /> */}
+        <LoggedInOut />
       </div>
     );
   }
