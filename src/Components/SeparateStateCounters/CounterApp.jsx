@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Counters from "./Counters";
 import Navbar from "./Navbar";
-// import "App.css"; import for styles path broken atm
+// import "App.css"; //import for styles path broken atm
 
 class CounterApp extends Component {
   //state is private(internal) and cannot be accessed from other components (data that is private to that component)
@@ -63,7 +63,7 @@ class CounterApp extends Component {
           onReset={this.handleReset}
           onIncrement={this.handleIncrement}
           onDelete={this.handleDelete}
-          //this are the properties of the prop object
+          //this are the properties of the prop object (passed to child comp'Counters')
         />
       </React.Fragment>
     );

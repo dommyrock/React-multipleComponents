@@ -1,5 +1,6 @@
 import React from "react";
 //Stateless functional component
+
 const NavBar = ({ totalCounters }) => {
   console.log("Navbar - Rendered");
   return (

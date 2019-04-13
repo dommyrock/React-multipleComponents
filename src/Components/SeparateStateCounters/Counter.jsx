@@ -44,7 +44,7 @@ class Counter extends Component {
   formatCount() {
     const { value: count } = this.props.counter; //destructuring for simpler use
     //const x =<h1>Zero</h1> ;  we can use jsx as values
-    return count === 0 ? "Zero" : count; //is count = 0 return 'zero' else return count
+    return count === 0 ? "Zero" : count;
   }
 }
 

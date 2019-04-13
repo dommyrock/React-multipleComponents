@@ -17,7 +17,7 @@ class Counters extends Component {
             onDelete={onDelete}
             onIncrement={onIncrement}
             counter={counter}
-            //we're not handeling events here , we're preparing them for parent of this component
+            //we're not handling events here , we're preparing them for parent of this component
           />
         ))}
       </div>

@@ -20,6 +20,7 @@ class Todo extends React.Component {
     this.state = {
       todos: todoData
     };
+
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(id) {

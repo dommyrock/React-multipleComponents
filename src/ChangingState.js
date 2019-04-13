@@ -85,7 +85,7 @@ class ChangeStateTest extends React.Component {
     });
   }
   render() {
-    let errorMsg = "todo";
+    let errorMsg = "incease to enable";
 
     return (
       <div className="App">
@@ -99,13 +99,13 @@ class ChangeStateTest extends React.Component {
           Add +1
         </button>
         <button className="button button5" onClick={this.onClickMulti10}>
-          Multiply x10
+          {this.state.count > 0 ? "Multiply x10" : errorMsg}
         </button>
         <button className="button button5" onClick={this.onClickMulti1500}>
-          Multiply x1500
+          {this.state.count > 0 ? "Multiply x1500" : errorMsg}
         </button>
         <button className="button button5" onClick={this.onClickDevide}>
-          Devide by2
+          {this.state.count > 0 ? "Devide / 2" : errorMsg}
         </button>
       </div>
     );
