@@ -15,6 +15,8 @@ import ChangingState from "./ChangingState";
 import CounterApp from "./Components/SeparateStateCounters/CounterApp";
 import LoggedInOut from "./Components/LoggedIn_Out/LoggedInOut";
 import Form from "./Components/Form/Form";
+import MemeApp from "./Components/MemeGenerator/MemeApp";
+import TodosHooksApp from "./Components/Todo/TodoWithHooks";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -37,6 +39,12 @@ class App extends Component {
         <CounterApp /> //////TODO Btn that multyplyes to x2 states to x4 states
         ...
         <LoggedInOut />
+        <br />
+        <Form />
+        <hr />
+        <MemeApp />
+        <br />
+        <TodosHooksApp />
       </div>
     );
   }
