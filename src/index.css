@@ -63,3 +63,24 @@ code {
   opacity: 1;
   right: 0;
 }
+/* custom css class for text editor box*/
+.TextEditorCss {
+  color: rgb(17, 17, 17);
+  max-width: 740px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(118, 143, 255, 0.1) 0px 16px 24px 0px;
+  padding: 40px;
+  margin: 65px auto 45px;
+  border-radius: 4.5px;
+}
+/* custom css class for text editor toolbar*/
+.format-toolbar {
+  display: flex;
+  border-bottom: solid 1.7px rgb(72, 158, 204);
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+}
+/* custom css class for text editor btn*/
+.tooltip-icon-button {
+  border: 0;
+}

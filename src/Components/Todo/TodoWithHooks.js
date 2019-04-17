@@ -5,6 +5,7 @@ import React, { useReducer, useContext, useEffect, useRef } from "react";
 //-->Reducers specify how the application's state changes in response to actions sent to the store
 //Context for passing  data to child
 
+//...(spread) to pass whole state obj
 function appReducer(state, action) {
   switch (action.type) {
     case "reset": {

@@ -17,6 +17,8 @@ import LoggedInOut from "./Components/LoggedIn_Out/LoggedInOut";
 import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
 import TodosHooksApp from "./Components/Todo/TodoWithHooks";
+import TextEditor from "./Components/TextEditor/TextEditor";
+
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -45,6 +47,9 @@ class App extends Component {
         <MemeApp />
         <br />
         <TodosHooksApp />
+        <div className="TextEditorCss">
+          <TextEditor />
+        </div>
       </div>
     );
   }
