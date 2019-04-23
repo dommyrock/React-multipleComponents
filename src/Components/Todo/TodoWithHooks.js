@@ -74,7 +74,7 @@ export default function TodosHooksApp() {
 
   return (
     <Context.Provider value={dispatch}>
-      <h1>Todos App</h1>
+      <h3>Todos App(With hooks)</h3>
       <button onClick={() => dispatch({ type: "add" })}>New Todo</button>
       <TodosList items={state} />
     </Context.Provider>

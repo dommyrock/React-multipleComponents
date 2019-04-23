@@ -82,3 +82,50 @@
 .background3 {
   background-color: rgb(75, 50, 75);
 }
+
+/* CSS for button inside <img> element*/
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+}
+
+/* Make the image responsive  but never stretchs it more than original (only shrinks)*/
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(150, 150, 160);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: rgb(129, 114, 212);
+}
+/* search bar css*/
+input[type="text"] {
+  width: 120px;
+  -webkit-transition: width 0.6s ease-in-out;
+  transition: width 0.6s ease-in-out;
+  border-color: rgb(91, 189, 189);
+  padding: 10px;
+  font-size: 17px;
+  float: center;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type="text"]:focus {
+  width: 30%;
+}

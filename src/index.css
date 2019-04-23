@@ -39,6 +39,21 @@ code {
   margin: 5px;
 }
 
+.buttonBlue {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4194c4;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 19px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
 .button span {
   cursor: pointer;
   display: inline-block;
@@ -67,8 +82,8 @@ code {
 .TextEditorCss {
   color: rgb(17, 17, 17);
   max-width: 740px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(118, 143, 255, 0.1) 0px 16px 24px 0px;
+  background-color: rgba(255, 255, 255, 0.788);
+  box-shadow: rgba(16, 38, 39, 0.1) 0px 26px 24px 0px;
   padding: 40px;
   margin: 65px auto 45px;
   border-radius: 4.5px;

@@ -112,6 +112,9 @@ export default class TextEditor extends Component {
     return (
       <Fragment>
         <h3>--text editor--</h3>
+        <p style={{ color: "lightgrey" }}>
+          (defaults disabled(shortcuts 'alt +' h,b,i,c,l,u)
+        </p>
         <FormatToolbar>
           <button
             className="tooltip-icon-button"

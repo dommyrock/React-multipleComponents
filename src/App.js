@@ -18,6 +18,7 @@ import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
 import TodosHooksApp from "./Components/Todo/TodoWithHooks";
 import TextEditor from "./Components/TextEditor/TextEditor";
+import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 
 //this is default class created by React as template
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
         <div className="TextEditorCss">
           <TextEditor />
         </div>
+        <UnsplashPhotos />
       </div>
     );
   }

@@ -44,6 +44,8 @@ class MemeGenerator extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <button className="button5">Generate</button>
+          <br />
           <input
             type="text"
             name="topText"
@@ -59,7 +61,6 @@ class MemeGenerator extends Component {
             placeholder="Input something"
             onChange={this.handleChange}
           />
-          <button className="button5">Generate</button>
         </form>
         {/* <div> */}
         <h2>{this.state.topText}</h2>
