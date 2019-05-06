@@ -39,8 +39,7 @@ class App extends Component {
         <hr />
         <Page />
         <br />
-        <CounterApp /> //////TODO Btn that multyplyes to x2 states to x4 states
-        ...
+        <CounterApp />
         <LoggedInOut />
         <br />
         <Form />

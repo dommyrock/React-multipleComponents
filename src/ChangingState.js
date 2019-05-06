@@ -1,31 +1,31 @@
 import React from "react";
 
-class ChangingState extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0
-    };
-    this.handleClick = this.handleClick.bind(this); //in it we use parent's(React.comp) method setState so we need to bind it to 'this'
-  }
-  handleClick() {
-    this.setState(previousState => {
-      return {
-        count: previousState.count + 10
-      };
-    });
-  }
-  render() {
-    return (
-      <div className="App">
-        <h1>{this.state.count}</h1>
-        <button className="button button5" onClick={this.handleClick}>
-          Change!
-        </button>
-      </div>
-    );
-  }
-}
+// class ChangingState extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       count: 0
+//     };
+//     this.handleClick = this.handleClick.bind(this); //in it we use parent's(React.comp) method setState so we need to bind it to 'this'
+//   }
+//   handleClick() {
+//     this.setState(previousState => {
+//       return {
+//         count: previousState.count + 10
+//       };
+//     });
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>{this.state.count}</h1>
+//         <button className="button button5" onClick={this.handleClick}>
+//           Change!
+//         </button>
+//       </div>
+//     );
+//   }
+// }
 
 // export default ChangingState;
 //****ANY TIME YOU USE setState METHOD YOU WANT TO BIND IT TO YOUR CLASS(inside class constructor)

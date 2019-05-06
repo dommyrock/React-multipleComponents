@@ -1,13 +1,21 @@
 import React from "react";
 export default function ImgRender(props) {
-  console.log(props.size);
-  let idCounter = 100; //ids for new rendered btns
   return (
     <div>
       <div className="container">
-        <img key={props.item.id} src={props.item.imgSrc} />
-        {props.size == "thumb" ? (
-          <button key={idCounter++} className="btn">
+        <img key={props.item.id} src={props.item.imgSrc} alt="" />
+        {props.item.size === "thumb" ? ( //Conditionaly render button
+          <button
+            key={props.imgIndex}
+            className="btn"
+            onClick={() =>
+              props.handleHdClick(
+                props.item.id,
+                props.imgIndex,
+                props.item.size
+              )
+            } //pass a function itself to onClick(not a result of the passed function invocation)!!!!
+          >
             HD
           </button>
         ) : null}
@@ -17,6 +25,3 @@ export default function ImgRender(props) {
 }
 
 //set unique id for new btn generated instead passing 'props.item.id' which is already used by imgs !!!!!
-
-//TODO make new method that fetched single img (from onClick btn )
-//fetch only changes state of current img-quality ... rest stay "thumb" Quality

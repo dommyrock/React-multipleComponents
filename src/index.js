@@ -1,3 +1,5 @@
+//App.css works here because we're importing "App from ./App" which imports App.css
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -13,6 +15,7 @@ import Forms from "./Forms";
 import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
 import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
+import ChatApp from "./Components/SlackChatApp/ChatApp";
 ReactDOM.render(<App />, document.getElementById("root"));
 // Uncomment  bellow to show separate component &comment this line
 
@@ -21,11 +24,9 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // ReactDOM.render(<StateManagement />, document.getElementById("root"));
 // ReactDOM.render(<EventHandlingInReact />, document.getElementById("root"));
 // ReactDOM.render(<ChangingState />, document.getElementById("root"));
-// ReactDOM.render(<LyfeCycleMethods />, document.getElementById("root"));
 // ReactDOM.render(<FetchingDataFromAPI />, document.getElementById("root"));
 // ReactDOM.render(<Forms />, document.getElementById("root"));
 // ReactDOM.render(<Form />, document.getElementById("root"));
 // ReactDOM.render(<MemeApp />, document.getElementById("root"));
 // ReactDOM.render(<UnsplashPhotos />, document.getElementById("root"));
-
-//App.css works here because we're importing "App from ./App" which imports App.css
+// ReactDOM.render(<ChatApp />, document.getElementById("root"));

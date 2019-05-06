@@ -29,51 +29,52 @@
 //   getSnapshotBeforeUpdate() {
 //     //for backing up data
 //   }
-import React, { Component } from "react";
-import Condiotional from "./Components/Conditional/Conditional";
-class LifeCycleMethods extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoading: true
-    };
-  }
+//--------------------------------------------------------------------------------------------------------------------------
+// import React, { Component } from "react";
+// import Condiotional from "./Components/Conditional/Conditional";
+// class LifeCycleMethods extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       isLoading: true
+//     };
+//   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      });
-    }, 1500); //changes prop of 'isLoading' false- 1.5s after component loaded
-  }
-  render() {
-    return (
-      <div>{this.state.isLoading ? <h1>Loading...</h1> : <Condiotional />}</div>
-    );
-  }
-}
+//   componentDidMount() {
+//     setTimeout(() => {
+//       this.setState({
+//         isLoading: false
+//       });
+//     }, 1500); //changes prop of 'isLoading' false- 1.5s after component loaded
+//   }
+//   render() {
+//     return (
+//       <div>{this.state.isLoading ? <h1>Loading...</h1> : <Condiotional />}</div>
+//     );
+//   }
+// }
 
 // export default LifeCycleMethods;
 
 //&& operator(checks if statement is truethy) used for truthy/falsey (usualy to shorten up sintax)
 // true && false ---returns false  (because it checks if stateement is true --if its not returns it)
 //false && false -immediately returns false (bcs 1st statement is false)
-class LifeCycleMethods2 extends Component {
-  constructor() {
-    super();
-    this.state = {
-      unreadMessages: [1, 2]
-    };
-  }
+// class LifeCycleMethods2 extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       unreadMessages: [1, 2]
+//     };
+//   }
 
-  render() {
-    return (
-      <div>
-        {this.state.unreadMessages.length > 0 && ( //only show message if we have unread msg else dont show nothing
-          <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
-        )}
-      </div>
-    );
-  }
-}
-export default LifeCycleMethods2;
+//   render() {
+//     return (
+//       <div>
+//         {this.state.unreadMessages.length > 0 && ( //only show message if we have unread msg else dont show nothing
+//           <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+//         )}
+//       </div>
+//     );
+//   }
+// }
+// export default LifeCycleMethods2;

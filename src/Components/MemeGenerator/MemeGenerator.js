@@ -6,17 +6,20 @@ class MemeGenerator extends Component {
     this.state = {
       topText: "",
       bottomText: "",
-      randomImg: "http://i.imgflip.com/1bij.jpg",
+      randomImg: "",
       allMemeImgs: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  //single api call saved to prop -->allMemeImgs
   componentDidMount() {
     fetch("https://api.imgflip.com/get_memes")
       .then(response => response.json())
       .then(response => {
         const { memes } = response.data;
+        // console.log(memes);
+
         this.setState({
           allMemeImgs: memes
         });

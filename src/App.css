@@ -125,7 +125,7 @@ input[type="text"] {
   float: center;
 }
 
-/* When the input field gets focus, change its width to 100% */
+/* When the input field gets focus, change its width */
 input[type="text"]:focus {
   width: 30%;
 }

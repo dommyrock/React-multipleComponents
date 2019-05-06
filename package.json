@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pusher/chatkit-client": "^1.5.0",
     "immutable": "^4.0.0-rc.12",
     "imutable": "0.0.1",
     "react": "^16.8.2",

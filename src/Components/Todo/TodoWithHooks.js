@@ -117,3 +117,9 @@ function TodoItem({ id, text, completed }) {
 //       didRun.current = true;
 //     }
 //   }); // [] param specifies that its only run once !!! else it will loop multiple times(infinite loop)
+
+//************* */
+
+//************* *///************* *///************* *///**********//************* *///************* *///************* */
+//Might break on rebuild if state is <TodosList> component is empty /refresh fixes  it (because it saves that empty <TodosList> State )
+//************* *///************* *///************* *///**********//************* *///************* *///************* */
