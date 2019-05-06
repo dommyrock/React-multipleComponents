@@ -1,3 +1,3 @@
 # React-multipleComponents
 
-Multiple samller components with React
+Multiple smaller components with React made for testing/learinng experience
