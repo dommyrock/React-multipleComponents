@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import Todo from "./Components/Todo/Todo";
-import ContactCard from "./Components/Contact/ContactCard";
 import AppContact from "./Components/Contact/AppContact";
 import PunchLine from "./Components/PunchLine/PunchLine";
 import Products from "./Components/Products/Products";
@@ -20,7 +17,8 @@ import TodosHooksApp from "./Components/Todo/TodoWithHooks";
 import TextEditor from "./Components/TextEditor/TextEditor";
 import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
-
+import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
+import countries from "./Components/AutoCompleteTextbox/countries";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -53,6 +51,7 @@ class App extends Component {
         </div>
         <UnsplashPhotos />
         <FileUploadApp />
+        <AutocompleteTextbox data={countries} />
       </div>
     );
   }
