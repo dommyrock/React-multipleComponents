@@ -19,7 +19,9 @@ class FileUploadApp extends Component {
     return (
       <div>
         <input type="file" onChange={this.fileSelectHandler} />
-        <button onClick={this.fileUploadHandler}>Upload</button>
+        <button className="buttonBlue button5 " onClick={this.fileUploadHandler}>
+          Upload
+        </button>
       </div>
     );
   }
