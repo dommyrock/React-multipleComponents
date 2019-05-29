@@ -16,6 +16,7 @@ import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
 import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import ChatApp from "./Components/SlackChatApp/ChatApp";
+import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 ReactDOM.render(<App />, document.getElementById("root"));
 // Uncomment  bellow to show separate component &comment this line
 
@@ -30,3 +31,4 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // ReactDOM.render(<MemeApp />, document.getElementById("root"));
 // ReactDOM.render(<UnsplashPhotos />, document.getElementById("root"));
 // ReactDOM.render(<ChatApp />, document.getElementById("root"));
+// ReactDOM.render(<FileUploadApp />, document.getElementById("root"));

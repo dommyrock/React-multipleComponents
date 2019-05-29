@@ -19,6 +19,7 @@ import MemeApp from "./Components/MemeGenerator/MemeApp";
 import TodosHooksApp from "./Components/Todo/TodoWithHooks";
 import TextEditor from "./Components/TextEditor/TextEditor";
 import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
+import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 
 //this is default class created by React as template
 class App extends Component {
@@ -51,6 +52,7 @@ class App extends Component {
           <TextEditor />
         </div>
         <UnsplashPhotos />
+        <FileUploadApp />
       </div>
     );
   }

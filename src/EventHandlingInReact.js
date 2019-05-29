@@ -12,10 +12,15 @@ function EventHandlingInReact() {
       <img
         onPointerEnter={() => console.log("Image was pointed/hovered ")}
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkMPK86PDVCSbHaMzzL1R84VvEDgVIQJO3JNnr2NAYloauUo23Sg"
+        alt=""
       />
       <br />
       <button onClick={handleClick}>Click me! </button>
-      <input type="text" onKeyPress={event => console.log(event.key)} />
+      <input
+        type="text"
+        onKeyPress={event => console.log(event.key)}
+        placeholder="Will log keys..."
+      />
     </div>
   );
 }

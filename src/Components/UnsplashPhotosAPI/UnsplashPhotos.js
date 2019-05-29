@@ -18,7 +18,9 @@ class UnsplashPhotos extends React.Component {
       searchKeyword: "",
       apiKey:
         "f2e129c71bd24f27de8cca4d8d5e0c701680ebdcbef2c594a79ba2774cb4f204",
-      apiUrl: "https://api.unsplash.com/search/photos"
+      apiUrl: "https://api.unsplash.com/search/photos",
+      totalPages: "",
+      total: ""
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -66,6 +68,8 @@ class UnsplashPhotos extends React.Component {
       .then(response => {
         this.setState({
           loaded: true,
+          totalPages: response.total_pages,
+          total: response.total,
           photosCollection: response.results.map(item => ({
             imgSrc: item.urls[this.state.size],
             id: item.id
@@ -73,6 +77,7 @@ class UnsplashPhotos extends React.Component {
         });
       });
   }
+
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -126,7 +131,7 @@ class UnsplashPhotos extends React.Component {
       .then(response => {
         const collectionCopy = [...this.state.photosCollection]; //copy (make change to item and replace old[])
         collectionCopy[imgIndex].imgSrc = response.results[imgIndex].urls[size]; //change CLICKED img size
-        collectionCopy[imgIndex].size = size; //change size prop for clicked item
+        collectionCopy[imgIndex].size = size; //change size prop for clicked item(so we dont show btn on already clicked img)
         this.setState({
           photosCollection: collectionCopy
         });
