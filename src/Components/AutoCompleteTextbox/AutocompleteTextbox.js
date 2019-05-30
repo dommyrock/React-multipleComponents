@@ -17,7 +17,7 @@ export default class AutocompleteTextbox extends React.Component {
     let suggestions = [];
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, "i"); // "i" param ->ignore case
-      suggestions = data.sort().filter(v => regex.test(v)); // regex.test --simmilar to IsMatch in C# (returns bool)
+      suggestions = data.sort().filter(v => regex.test(v)); // regex.test --similar to IsMatch in C# (returns bool)
     }
     this.setState(() => ({
       suggestions,

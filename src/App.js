@@ -27,7 +27,10 @@ class App extends Component {
         <header>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <h2 className="background2">--Component Library--</h2>
+        <div className="background2">
+          <h2>--Component Library--</h2>
+          <h4>By: Dominik Polzer</h4>
+        </div>
         <AppContact />
         <PunchLine />
         <Products />
