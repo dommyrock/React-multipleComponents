@@ -42,7 +42,7 @@ export default class AutocompleteTextbox extends React.Component {
     return (
       <ul>
         {suggestions.map(item => (
-          <li onClick={() => this.suggestionsSelected(item)}>{item}</li>
+          <li onClick={() => this.suggestionsSelected(item)}>{item}</li> //cast each item to <li>
         ))}
       </ul>
     );

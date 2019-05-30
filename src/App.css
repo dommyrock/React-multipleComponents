@@ -128,7 +128,26 @@ input[type="text"]:focus {
   width: 30%;
 }
 
+/* CSS for AutocompleteTextbox*/
 .App-Component {
   margin: 150px auto 0 auto;
   width: 600px;
+}
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid grey;
+}
+ul::before {
+  content: "";
+}
+li {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+li:hover {
+  text-decoration: underline;
+  background-color: rgba(192, 189, 189, 0.2);
 }
