@@ -24,7 +24,7 @@ export default class AutocompleteTextbox extends React.Component {
     }));
   };
 
-  //Event fires when item is selected from "dropdown items" and binds states
+  //Event fires when item is selected from <ul> and binds states
   suggestionsSelected(value) {
     this.setState(() => ({
       text: value,
@@ -35,16 +35,16 @@ export default class AutocompleteTextbox extends React.Component {
   //Render sugested countries to DOM
   renderSuggestions() {
     const { suggestions } = this.state;
-    if (suggestions.length === 0) {
-      return null;
+    if (suggestions.length !== 0) {
+      return (
+        <ul>
+          {suggestions.map(item => (
+            <li onClick={() => this.suggestionsSelected(item)}>{item}</li> //cast each item to <li>
+          ))}
+        </ul>
+      );
     }
-    return (
-      <ul>
-        {suggestions.map(item => (
-          <li onClick={() => this.suggestionsSelected(item)}>{item}</li> //cast each item to <li>
-        ))}
-      </ul>
-    );
+    return null;
   }
 
   render() {
