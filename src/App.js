@@ -66,3 +66,4 @@ class App extends Component {
 }
 
 export default App;
+//AutocompleteTextbox nested <div>'s because of Css classes

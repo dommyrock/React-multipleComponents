@@ -18,9 +18,9 @@ import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import ChatApp from "./Components/SlackChatApp/ChatApp";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
-ReactDOM.render(<App />, document.getElementById("root"));
-// Uncomment  bellow to show separate component &comment this line
+ReactDOM.render(<App />, document.getElementById("root")); //RENDER ALL COMPONENTS
 
+//UNCOMENT TO DISPLAY SPECIFIC COMPONENT ONLY !!
 // ReactDOM.render(<Layout />, document.getElementById("root"));
 // ReactDOM.render(<TodoComponent />, document.getElementById("root"));
 // ReactDOM.render(<StateManagement />, document.getElementById("root"));

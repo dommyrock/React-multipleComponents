@@ -99,8 +99,9 @@ code {
 }
 
 /*AutocompleteTextbox CSS with fixed width*/
+/* move component down from top border and make it 600px wide --->animation inherited from App.css */
 .App-Component {
-  margin: 150px auto 0 auto;
+  margin: 60px auto 0 auto;
   width: 600px;
 }
 .AutoCompleteText {
