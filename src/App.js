@@ -55,7 +55,11 @@ class App extends Component {
         </div>
         <UnsplashPhotos />
         <FileUploadApp />
-        <AutocompleteTextbox data={countries} />
+        <div className="App-Component">
+          <div className="AutoCompleteText">
+            <AutocompleteTextbox data={countries} />
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../Autocomplete.css";
 
 export default class AutocompleteTextbox extends React.Component {
   constructor(props) {
@@ -51,8 +50,8 @@ export default class AutocompleteTextbox extends React.Component {
   render() {
     return (
       <div className="App">
-        <p>Autocomplete textbox</p>
-        <input type="text" value={this.state.text} onChange={this.handleTextChange} />
+        <p>Auto suggestion textbox</p>
+        <input type="text" value={this.state.text} onChange={this.handleTextChange} placeholder="Input country name" />
         {this.renderSuggestions()}
       </div>
     );

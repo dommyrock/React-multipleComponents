@@ -16,8 +16,7 @@ class UnsplashPhotos extends React.Component {
       imgCount: 10,
       size: "", //size set for whole rendered collection ( change to separate prop foreach rendered img  !!)
       searchKeyword: "",
-      apiKey:
-        "f2e129c71bd24f27de8cca4d8d5e0c701680ebdcbef2c594a79ba2774cb4f204",
+      apiKey: "f2e129c71bd24f27de8cca4d8d5e0c701680ebdcbef2c594a79ba2774cb4f204",
       apiUrl: "https://api.unsplash.com/search/photos",
       totalPages: "",
       total: ""
@@ -93,13 +92,7 @@ class UnsplashPhotos extends React.Component {
 
     fetch(
       //or w backticks `${apiUrl}/?per_page=${photoCount}&query=${searchKey}&client_id=${apiKey}`
-      apiUrl +
-        "/?per_page=" +
-        photoCount +
-        "&query=" +
-        searchKey +
-        "&client_id=" +
-        apiKey
+      apiUrl + "/?per_page=" + photoCount + "&query=" + searchKey + "&client_id=" + apiKey
     )
       .then(response => response.json())
       .then(response => {
@@ -118,14 +111,12 @@ class UnsplashPhotos extends React.Component {
   //make same api (filter our single one by img id)--->assign it to state copy-> ...prevstate
   handleHdClick = (id, imgIndex, size) => {
     size = "regular";
-    console.log(
-      `HD was clicked ....TODO API call with this Img ID :${id}--INDEX Of:${imgIndex}---size:${size}`
-    );
+    console.log(`HD was clicked ....TODO API call with this Img ID :${id}--INDEX Of:${imgIndex}---size:${size}`);
 
     fetch(
-      `${this.state.apiUrl}/?per_page=${this.state.imgCount}&query=${
-        this.state.searchKeyword
-      }&client_id=${this.state.apiKey}`
+      `${this.state.apiUrl}/?per_page=${this.state.imgCount}&query=${this.state.searchKeyword}&client_id=${
+        this.state.apiKey
+      }`
     )
       .then(response => response.json())
       .then(response => {
@@ -166,7 +157,6 @@ class UnsplashPhotos extends React.Component {
 }
 
 export default UnsplashPhotos;
-//TODO : remove btn when HD img is rendered ---
 
 //#region Example of modifying child value in state of []
 /*
