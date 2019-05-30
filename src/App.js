@@ -27,6 +27,7 @@ class App extends Component {
         <header>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
+        <h2 className="background2">--Component Library--</h2>
         <AppContact />
         <PunchLine />
         <Products />

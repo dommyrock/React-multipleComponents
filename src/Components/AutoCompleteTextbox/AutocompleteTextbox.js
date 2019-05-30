@@ -12,11 +12,12 @@ export default class AutocompleteTextbox extends React.Component {
 
   handleTextChange = event => {
     const { data } = this.props;
-    const value = event.target.value;
+    const value = event.target.value; //get text value of <input>
+
     let suggestions = [];
     if (value.length > 0) {
-      const regex = new RegExp(`^${value}`, "i");
-      suggestions = data.sort().filter(v => regex.test(v));
+      const regex = new RegExp(`^${value}`, "i"); // "i" param ->ignore case
+      suggestions = data.sort().filter(v => regex.test(v)); // regex.test --simmilar to IsMatch in C# (returns bool)
     }
     this.setState(() => ({
       suggestions,
@@ -24,12 +25,15 @@ export default class AutocompleteTextbox extends React.Component {
     }));
   };
 
+  //Event fires when item is selected from "dropdown items" and binds states
   suggestionsSelected(value) {
     this.setState(() => ({
       text: value,
       suggestions: []
     }));
   }
+
+  //Render sugested countries to DOM
   renderSuggestions() {
     const { suggestions } = this.state;
     if (suggestions.length === 0) {
