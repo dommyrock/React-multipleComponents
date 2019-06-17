@@ -25,6 +25,8 @@ export default class CsvFile extends React.Component {
   };
 
   render() {
+    console.log("Requested url: " + this.state.apiUrl);
+
     console.log(this.state.data);
 
     return (
