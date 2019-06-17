@@ -5,7 +5,7 @@ import Todo from "./Components/Todo/Todo";
 import AppContact from "./Components/Contact/AppContact";
 import PunchLine from "./Components/PunchLine/PunchLine";
 import Products from "./Components/Products/Products";
-import Page from "./Page";
+import Warning from "./Warning";
 import StateManagement from "./StateManagement";
 import EventHandlingInReact from "./EventHandlingInReact";
 import ChangingState from "./ChangingState";
@@ -19,6 +19,7 @@ import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
 import countries from "./Components/AutoCompleteTextbox/countries";
+import CsvFile from "./Components/CsvFileApi/CsvFile";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -40,7 +41,7 @@ class App extends Component {
         <hr />
         <ChangingState />
         <hr />
-        <Page />
+        <Warning />
         <br />
         <CounterApp />
         <LoggedInOut />
@@ -60,6 +61,8 @@ class App extends Component {
             <AutocompleteTextbox data={countries} />
           </div>
         </div>
+        <br />
+        <CsvFile />
       </div>
     );
   }
