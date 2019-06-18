@@ -33,7 +33,8 @@ export default class CsvFile extends React.Component {
     const columns = [
       {
         Header: "Name",
-        accessor: "firstName"
+        accessor: "firstName",
+        filterable: true
       },
       {
         Header: "Surname",
@@ -48,7 +49,15 @@ export default class CsvFile extends React.Component {
         accessor: "city"
       }
     ];
-
-    return <ReactTable columns={columns} data={this.state.data} />;
+    //<> </> same as React.Fragment
+    return (
+      <>
+        <h4 style={{ color: "grey" }}>Table displays valid (stored) data from "CsvFileUpload-MVC" App</h4>
+        <ReactTable columns={columns} data={this.state.data} />
+        <br />
+      </>
+    );
   }
 }
+
+//Todo take stored data in DB and get  % of ppl from cityes (use some graph library )
