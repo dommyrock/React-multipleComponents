@@ -3,6 +3,7 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 //graph part
 import { Doughnut, Pie, Polar } from "react-chartjs-2";
+import Chart from "chart.js";
 import { Set } from "immutable";
 //Need to enable CORS for dev on backend server(or host on other domain) for this
 
@@ -47,6 +48,8 @@ export default class CsvFile extends React.Component {
         percent: 0
       };
     }
+    let result = [];
+
     //update counts for each city
     for (let i = 0; i < data.length; i++) {
       for (let j = 0; j < chartDataArr.length; j++) {
@@ -55,13 +58,12 @@ export default class CsvFile extends React.Component {
         }
       }
     }
-    //get percent
-    let result = [];
-    for (let i = 0; i < chartDataArr.length; i++) {
-      chartDataArr[i].percent = (chartDataArr[i].cityCount / this.state.totalRows) * 100;
-      result.push(chartDataArr[i].percent);
-    }
-    return result;
+    //get percent ...not needed since --->Chart.js will total all of the numbers and calculate the relative proportion of each.
+    // for (let i = 0; i < chartDataArr.length; i++) {
+    //   chartDataArr[i].percent = (chartDataArr[i].cityCount / this.state.totalRows) * 100;
+    //   result.push(chartDataArr[i].percent);
+    // }
+    return chartDataArr;
 
     // console.log(this.chartData);
   };
@@ -90,22 +92,30 @@ export default class CsvFile extends React.Component {
       }
     ];
     //<> </> same as React.Fragment
-    const chartOptions = {};
-    const temp = {
+
+    //Global options
+    Chart.defaults.global.animation.duration = 5000;
+    // Chart.defaults.global.responsive = false;
+    const data = {
       datasets: [
         {
-          data: this.calculatePercent(),
+          data: this.calculatePercent().map(({ cityCount }) => cityCount), //get single prop of ob returned from func
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)"
-            // 'rgba(75, 192, 192, 0.2)',
-            // 'rgba(153, 102, 255, 0.2)',
-            // 'rgba(255, 159, 64, 0.2)'
-          ]
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderWidth: 1,
+          borderColor: "#77",
+          hoverBorderWidth: 6,
+          hoverBorderColor: "lightblue"
+          // hoverBackgroundColor: "transparent"
         }
       ],
-      labels: ["Zagreb", "Split", "Other"],
+      labels: this.calculatePercent().map(item => item.cityName), //get single prop of ob returned from func (same w lambda)
       options: {}
     };
     console.log(this.calculatePercent());
@@ -115,11 +125,14 @@ export default class CsvFile extends React.Component {
         <h4 style={{ color: "grey" }}>Table displays valid (stored) data from "CsvFileUpload-MVC" App</h4>
         <ReactTable columns={columns} data={this.state.data} defaultPageSize={10} />
         <br />
-        <button onClick={() => this.calculatePercent()}>TEMP Button</button>
+        {/* <button onClick={() => this.calculatePercent()}>TEMP Button</button> */}
 
-        <Doughnut data={temp} />
-        {/* <Polar data={temp} />
-        <Pie data={temp} /> */}
+        <Doughnut
+          data={data}
+          options={{ title: { display: true, text: "Population chart", fontSize: 25 }, legend: { position: "right" } }}
+        />
+        <Polar data={data} />
+        <Pie data={data} />
       </>
     );
   }
