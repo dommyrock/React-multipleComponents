@@ -43,7 +43,7 @@ class App extends Component {
         <hr />
         <Warning />
         <br />
-        <CounterApp />
+        {/* <CounterApp /> */}
         <LoggedInOut />
         <br />
         <Form />
