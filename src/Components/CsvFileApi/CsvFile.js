@@ -95,6 +95,7 @@ export default class CsvFile extends React.Component {
 
     //Global options
     Chart.defaults.global.animation.duration = 5000;
+    Chart.defaults.global.maintainAspectRatio = false; //to keep charts correctly resized (responsive)
     // Chart.defaults.global.responsive = false;
     const data = {
       datasets: [
@@ -126,13 +127,17 @@ export default class CsvFile extends React.Component {
         <ReactTable columns={columns} data={this.state.data} defaultPageSize={10} />
         <br />
         {/* <button onClick={() => this.calculatePercent()}>TEMP Button</button> */}
-
-        <Doughnut
-          data={data}
-          options={{ title: { display: true, text: "Population chart", fontSize: 25 }, legend: { position: "right" } }}
-        />
-        <Polar data={data} />
-        <Pie data={data} />
+        <div className="chart-container" style={{ position: "relative", height: "30vh", width: "40vw" }}>
+          <Doughnut
+            data={data}
+            options={{
+              title: { display: true, text: "Population chart", fontSize: 25 },
+              legend: { position: "bottom" }
+            }}
+          />
+          <Polar data={data} />
+          <Pie data={data} />
+        </div>
       </>
     );
   }
