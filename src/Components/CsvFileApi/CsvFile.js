@@ -48,7 +48,6 @@ export default class CsvFile extends React.Component {
         percent: 0
       };
     }
-    let result = [];
 
     //update counts for each city
     for (let i = 0; i < data.length; i++) {
@@ -58,18 +57,20 @@ export default class CsvFile extends React.Component {
         }
       }
     }
+    //#region old percentage fetch
+    // let result = [];
     //get percent ...not needed since --->Chart.js will total all of the numbers and calculate the relative proportion of each.
     // for (let i = 0; i < chartDataArr.length; i++) {
     //   chartDataArr[i].percent = (chartDataArr[i].cityCount / this.state.totalRows) * 100;
     //   result.push(chartDataArr[i].percent);
     // }
+    //#endregion
     return chartDataArr;
-
     // console.log(this.chartData);
   };
 
   render() {
-    console.log(this.state.data);
+    // console.log(this.state.data);
 
     const columns = [
       {
@@ -91,7 +92,6 @@ export default class CsvFile extends React.Component {
         accessor: "city"
       }
     ];
-    //<> </> same as React.Fragment
 
     //Global options
     Chart.defaults.global.animation.duration = 5000;
@@ -119,7 +119,7 @@ export default class CsvFile extends React.Component {
       options: {}
     };
     console.log(this.calculatePercent());
-
+    //<> </> same as React.Fragment
     return (
       <>
         <h4 style={{ color: "grey" }}>Table displays valid (stored) data from "CsvFileUpload-MVC" App</h4>
@@ -138,4 +138,4 @@ export default class CsvFile extends React.Component {
   }
 }
 //make first few beginner components "foldable/hidable"
-//() => this.calculatePercent() (has to be "callback" function else it instantly executed)
+//() => this.calculatePercent() (has to be "callback" function else it's instantly executed)
