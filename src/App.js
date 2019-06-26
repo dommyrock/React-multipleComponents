@@ -19,7 +19,8 @@ import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
 import countries from "./Components/AutoCompleteTextbox/countries";
-import CsvFile from "./Components/CsvFileApi/CsvFile";
+import CsvTable from "./Components/CsvFileApi/CsvTable";
+import PieCharts from "./Components/CsvFileApi/PieCharts";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -43,7 +44,7 @@ class App extends Component {
         <hr />
         <Warning />
         <br />
-        {/* <CounterApp /> */}
+        {/* <CounterApp /> temp disabled (because of console output)*/}
         <LoggedInOut />
         <br />
         <Form />
@@ -62,7 +63,8 @@ class App extends Component {
           </div>
         </div>
         <br />
-        <CsvFile />
+        <CsvTable />
+        <PieCharts />
       </div>
     );
   }

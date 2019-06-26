@@ -1,6 +1,4 @@
 import React from "react";
-import ReactTable from "react-table";
-import "react-table/react-table.css";
 //graph part
 import { Doughnut, Pie, Polar } from "react-chartjs-2";
 import Chart from "chart.js";
@@ -72,30 +70,11 @@ export default class CsvFile extends React.Component {
   render() {
     // console.log(this.state.data);
 
-    const columns = [
-      {
-        Header: "Name",
-        accessor: "firstName",
-        filterable: true
-      },
-      {
-        Header: "Surname",
-        accessor: "lastName",
-        filterable: true
-      },
-      {
-        Header: "Zip",
-        accessor: "zipCode"
-      },
-      {
-        Header: "City",
-        accessor: "city"
-      }
-    ];
-
     //Global options
-    Chart.defaults.global.animation.duration = 5000;
-    Chart.defaults.global.maintainAspectRatio = false; //to keep charts correctly resized (responsive)
+    Chart.defaults.global.maintainAspectRatio = false; //to enable custom chart resizing
+    Chart.defaults.global.animation.duration = 4000;
+    Chart.defaults.global.animation.easing = "easeOutBounce"; //more animation styles at "https://www.chartjs.org/docs/latest/configuration/animations.html"
+
     // Chart.defaults.global.responsive = false;
     const data = {
       datasets: [
@@ -107,11 +86,16 @@ export default class CsvFile extends React.Component {
             "rgba(255, 206, 86, 0.2)",
             "rgba(75, 192, 192, 0.2)",
             "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
+            "rgba(255, 159, 64, 0.2)",
+            "rgba(0, 247, 247, 0.15)",
+            "rgba(245, 66, 66, 0.788)",
+            "rgba(250, 227, 17, 0.788)",
+            "rgba(175, 24, 221, 0.788)",
+            "rgba(14, 247, 83, 0.788)"
           ],
           borderWidth: 1,
           borderColor: "#77",
-          hoverBorderWidth: 6,
+          hoverBorderWidth: 5,
           hoverBorderColor: "lightblue"
           // hoverBackgroundColor: "transparent"
         }
@@ -119,28 +103,25 @@ export default class CsvFile extends React.Component {
       labels: this.calculatePercent().map(item => item.cityName), //get single prop of ob returned from func (same w lambda)
       options: {}
     };
-    console.log(this.calculatePercent());
-    //<> </> same as React.Fragment
+    // console.log(this.calculatePercent());
+    //chart size styling example "style={{ height: "20vh", width: "40vw" }}"
     return (
-      <>
-        <h4 style={{ color: "grey" }}>Table displays valid (stored) data from "CsvFileUpload-MVC" App</h4>
-        <ReactTable columns={columns} data={this.state.data} defaultPageSize={10} />
-        <br />
-        {/* <button onClick={() => this.calculatePercent()}>TEMP Button</button> */}
-        <div className="chart-container" style={{ position: "relative", height: "30vh", width: "40vw" }}>
-          <Doughnut
-            data={data}
-            options={{
-              title: { display: true, text: "Population chart", fontSize: 25 },
-              legend: { position: "bottom" }
-            }}
-          />
-          <Polar data={data} />
-          <Pie data={data} />
-        </div>
-      </>
+      <div className="App" style={{ height: "40vh" }}>
+        <h2>Population charts</h2>
+        <Doughnut
+          data={data}
+          options={{
+            // title: { display: true, text: "Population chart", fontSize: 25 },
+            legend: { position: "bottom" }
+          }}
+        />
+        <Polar data={data} />
+        <Pie data={data} />
+      </div>
     );
   }
 }
+//<> </> same as React.Fragment
+
 //make first few beginner components "foldable/hidable"
 //() => this.calculatePercent() (has to be "callback" function else it's instantly executed)
