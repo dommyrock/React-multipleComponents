@@ -46,7 +46,7 @@ code {
   text-align: center;
   font-size: 19px;
   padding: 20px;
-  width: 150px;
+  width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;

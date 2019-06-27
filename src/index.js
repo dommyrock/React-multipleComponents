@@ -8,7 +8,7 @@ import Layout from "./Components/Layout";
 import TodoComponent from "./Components/Todo/Todo";
 import StateManagement from "./StateManagement";
 import EventHandlingInReact from "./EventHandlingInReact";
-import ChangingState from "./ChangingState";
+import CalculateMonoState from "./CalculateMonoState";
 import LyfeCycleMethods from "./LifecycleMethods";
 import FetchingDataFromAPI from "./APICall";
 import Forms from "./Forms";

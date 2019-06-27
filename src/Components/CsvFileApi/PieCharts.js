@@ -106,7 +106,7 @@ export default class CsvFile extends React.Component {
     // console.log(this.calculatePercent());
     //chart size styling example "style={{ height: "20vh", width: "40vw" }}"
     return (
-      <div className="App" style={{ height: "40vh" }}>
+      <div className="App" style={{ height: "30vh" }}>
         <h2>Population charts</h2>
         <Doughnut
           data={data}

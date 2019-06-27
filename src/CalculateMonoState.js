@@ -37,7 +37,7 @@ import React from "react";
 //count: previousState.count + 1->adds +1 to current count and saves it as new prop of new state obj(returned form 'handleClick' method)
 
 //Change state of 'count' prop with multiple functions(single state!!)
-class ChangeStateTest extends React.Component {
+export default class CalculateMonoState extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -111,5 +111,3 @@ class ChangeStateTest extends React.Component {
     );
   }
 }
-
-export default ChangeStateTest;

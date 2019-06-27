@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Todo from "./Components/Todo/Todo";
-import AppContact from "./Components/Contact/AppContact";
-import PunchLine from "./Components/PunchLine/PunchLine";
-import Products from "./Components/Products/Products";
 import Warning from "./Warning";
-import StateManagement from "./StateManagement";
-import EventHandlingInReact from "./EventHandlingInReact";
-import ChangingState from "./ChangingState";
-import CounterApp from "./Components/SeparateStateCounters/CounterApp";
+import CalculateMonoState from "./CalculateMonoState";
 import LoggedInOut from "./Components/LoggedIn_Out/LoggedInOut";
 import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
@@ -21,6 +14,7 @@ import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTe
 import countries from "./Components/AutoCompleteTextbox/countries";
 import CsvTable from "./Components/CsvFileApi/CsvTable";
 import PieCharts from "./Components/CsvFileApi/PieCharts";
+import BeginnerComponents from "./Components/BeginnerComponents/ComponentStack";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -29,18 +23,14 @@ class App extends Component {
         <header>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <div className="background2">
+        <div style={{ backgroundColor: "lightgrey" }}>
           <h2>--Component Library--</h2>
           <h4>By: Dominik Polzer</h4>
         </div>
-        <AppContact />
-        <PunchLine />
-        <Products />
-        <Todo />
-        <StateManagement />
-        <EventHandlingInReact />
+        <BeginnerComponents />
+
         <hr />
-        <ChangingState />
+        <CalculateMonoState />
         <hr />
         <Warning />
         <br />
