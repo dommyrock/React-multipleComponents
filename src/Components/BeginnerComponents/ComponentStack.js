@@ -34,7 +34,7 @@ export default class BeginnerComponents extends React.Component {
   }
 }
 //fetch components to render
-function ComponentsToRender(params) {
+function ComponentsToRender() {
   return (
     <div>
       <AppContact />

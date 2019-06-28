@@ -3,6 +3,7 @@ import React from "react";
 import { Doughnut, Pie, Polar } from "react-chartjs-2";
 import Chart from "chart.js";
 import { Set } from "immutable";
+import VisibilitySensor from "react-visibility-sensor";
 //Need to enable CORS for dev on backend server(or host on other domain) for this
 
 //Api URI(hosted on iss for test) : http://localhost:62174/csv/file?$select=firstname
@@ -12,7 +13,8 @@ export default class CsvFile extends React.Component {
     this.state = {
       apiUrl: "http://localhost:62174/csv/file",
       data: [],
-      totalRows: 0
+      totalRows: 0,
+      visible: false
     };
   }
 
@@ -33,7 +35,7 @@ export default class CsvFile extends React.Component {
 
   //Function that dynamically calculates % based on number of cities (maps each city count )
   //Get data from data prop and iterate it and increment count of each city ?? or do it in DB instead ...when saving it ??
-  calculatePercent = () => {
+  countData = () => {
     const data = this.state.data;
     //distinct set
     var chartDataArr = [...new Set(data.map(item => item.city), { count: 1 })];
@@ -67,19 +69,26 @@ export default class CsvFile extends React.Component {
     // console.log(this.chartData);
   };
 
+  //check if graphs section is in view (visible)
+  handleVisibility = isVisible => {
+    this.setState({
+      visible: isVisible
+    });
+    // console.log(this.state.visible);
+  };
+
   render() {
     // console.log(this.state.data);
 
     //Global options
     Chart.defaults.global.maintainAspectRatio = false; //to enable custom chart resizing
     Chart.defaults.global.animation.duration = 4000;
-    Chart.defaults.global.animation.easing = "easeOutBounce"; //more animation styles at "https://www.chartjs.org/docs/latest/configuration/animations.html"
-
+    // Chart.defaults.global.animation.easing = "easeOutBounce"; //more animation styles at "https://www.chartjs.org/docs/latest/configuration/animations.html"
     // Chart.defaults.global.responsive = false;
     const data = {
       datasets: [
         {
-          data: this.calculatePercent().map(({ cityCount }) => cityCount), //get single prop of ob returned from func
+          data: this.countData().map(({ cityCount }) => cityCount), //get single prop of ob returned from func
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -100,28 +109,49 @@ export default class CsvFile extends React.Component {
           // hoverBackgroundColor: "transparent"
         }
       ],
-      labels: this.calculatePercent().map(item => item.cityName), //get single prop of ob returned from func (same w lambda)
+      labels: this.countData().map(item => item.cityName), //get single prop of ob returned from func (same w lambda)
       options: {}
     };
-    // console.log(this.calculatePercent());
+    // console.log(this.countData());
     //chart size styling example "style={{ height: "20vh", width: "40vw" }}"
+    let visibility = this.state.visible;
     return (
       <div className="App" style={{ height: "30vh" }}>
-        <h2>Population charts</h2>
-        <Doughnut
-          data={data}
-          options={{
-            // title: { display: true, text: "Population chart", fontSize: 25 },
-            legend: { position: "bottom" }
-          }}
-        />
-        <Polar data={data} />
-        <Pie data={data} />
+        <VisibilitySensor onChange={this.handleVisibility}>
+          <h2>Population charts</h2>
+        </VisibilitySensor>
+        {visibility && (
+          <>
+            <Doughnut
+              data={data}
+              options={{
+                // title: { display: true, text: "Population chart", fontSize: 25 },
+                legend: { position: "bottom" },
+                animation: { easing: "easeOutBounce" }
+              }}
+            />
+            <Polar
+              data={data}
+              options={{
+                animation: { easing: "easeOutElastic", duration: 7000 }
+              }}
+            />
+            <Pie
+              data={data}
+              options={{
+                animation: { easing: "easeOutBack" }
+              }}
+            />
+          </>
+        )}
       </div>
     );
   }
 }
 //<> </> same as React.Fragment
+//() => this.countData() (has to be "callback" function else it's instantly executed)
 
-//make first few beginner components "foldable/hidable"
-//() => this.calculatePercent() (has to be "callback" function else it's instantly executed)
+//external func for visibility testing
+// function onChange(isVisible) {
+//   // console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+// }
