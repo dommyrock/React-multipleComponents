@@ -1,17 +1,17 @@
 import React from "react";
 //graph part
-import { Doughnut, Pie, Polar, Bar, HorizontalBar } from "react-chartjs-2";
+import { Bar, HorizontalBar } from "react-chartjs-2";
 import Chart from "chart.js";
 import { Set } from "immutable";
 import VisibilitySensor from "react-visibility-sensor";
 //Need to enable CORS for dev on backend server(or host on other domain) for this
 
 //Api URI(hosted on iss for test) : http://localhost:62174/csv/file?$select=firstname
-export default class PieCharts extends React.Component {
+export default class BarCharts extends React.Component {
   constructor() {
     super();
     this.state = {
-      apiUrl: "http://localhost:62174/csv/file",
+      apiUrl: "http://localhost:62174/csv/file", //TEMP DISABLED BECAUSE OF OVERLAP
       data: [],
       totalRows: 0,
       visible: false
@@ -70,12 +70,13 @@ export default class PieCharts extends React.Component {
   };
 
   //check if graphs section is in view (visible)
-  handleVisibility = isVisible => {
+
+  handleBarChartsVisibility = isVisible => {
     this.setState({
       ...this.state,
       visible: isVisible
     });
-    console.log("Charts are now in view " + this.state.visible);
+    console.log("Bar charts are now in view " + this.state.visible);
   };
 
   render() {
@@ -118,8 +119,11 @@ export default class PieCharts extends React.Component {
     let visibility = this.state.visible;
     return (
       <div className="App" style={{ height: "30vh" }}>
+        {/* <VisibilitySensor onChange={this.handleBarChartsVisibility}> */}
+        <h2>Bar charts</h2>
+        {/* </VisibilitySensor> */}
+        {/* {visibility && ( */}
         <>
-          <h2>Bar charts</h2>
           <Bar
             type="bar"
             data={data}
@@ -156,33 +160,7 @@ export default class PieCharts extends React.Component {
             }}
           />
         </>
-        <VisibilitySensor onChange={this.handleVisibility}>
-          <h2>Pie charts</h2>
-        </VisibilitySensor>
-        {visibility && (
-          <>
-            <Doughnut
-              data={data}
-              options={{
-                // title: { display: true, text: "Population chart", fontSize: 25 },
-                legend: { position: "bottom" },
-                animation: { easing: "easeOutBounce" }
-              }}
-            />
-            <Polar
-              data={data}
-              options={{
-                animation: { easing: "easeOutElastic", duration: 7000 }
-              }}
-            />
-            <Pie
-              data={data}
-              options={{
-                animation: { easing: "easeOutBack" }
-              }}
-            />
-          </>
-        )}
+        {/* )} */}
       </div>
     );
   }

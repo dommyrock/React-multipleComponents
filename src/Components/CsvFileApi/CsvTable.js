@@ -1,7 +1,6 @@
 import React from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import PieCharts from "./PieCharts";
 
 //Need to enable CORS for dev(on backend server) (or host on other domain) for this
 //Api URI(hosted on iss for test) : http://localhost:62174/csv/file?$select=firstname
@@ -68,6 +67,4 @@ export default class CsvFile extends React.Component {
   }
 }
 
-//TODO
-//make first few beginner components "foldable/hidable"
 //() => this.calculatePercent() (has to be "callback" function else it's instantly executed)

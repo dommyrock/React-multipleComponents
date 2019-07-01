@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import BeginnerComponents from "./Components/BeginnerComponents/ComponentStack";
 import Warning from "./Warning";
 import CalculateMonoState from "./CalculateMonoState";
 import LoggedInOut from "./Components/LoggedIn_Out/LoggedInOut";
@@ -14,7 +15,7 @@ import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTe
 import countries from "./Components/AutoCompleteTextbox/countries";
 import CsvTable from "./Components/CsvFileApi/CsvTable";
 import PieCharts from "./Components/CsvFileApi/PieCharts";
-import BeginnerComponents from "./Components/BeginnerComponents/ComponentStack";
+import BarCharts from "./Components/CsvFileApi/BarCharts";
 //this is default class created by React as template
 class App extends Component {
   render() {
@@ -28,7 +29,6 @@ class App extends Component {
           <h4>By: Dominik Polzer</h4>
         </div>
         <BeginnerComponents />
-
         <hr />
         <CalculateMonoState />
         <hr />
@@ -55,6 +55,7 @@ class App extends Component {
         <br />
         <CsvTable />
         <PieCharts />
+        {/* <BarCharts /> */}
       </div>
     );
   }

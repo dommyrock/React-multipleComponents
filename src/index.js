@@ -18,6 +18,7 @@ import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
 import ChatApp from "./Components/SlackChatApp/ChatApp";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
+import BarCharts from "./Components/CsvFileApi/BarCharts";
 ReactDOM.render(<App />, document.getElementById("root")); //RENDER ALL COMPONENTS
 
 //UNCOMENT TO DISPLAY SPECIFIC COMPONENT ONLY !!
@@ -34,3 +35,4 @@ ReactDOM.render(<App />, document.getElementById("root")); //RENDER ALL COMPONEN
 // ReactDOM.render(<ChatApp />, document.getElementById("root"));
 // ReactDOM.render(<FileUploadApp />, document.getElementById("root"));
 // ReactDOM.render(<AutocompleteTextbox />, document.getElementById("root"));
+// ReactDOM.render(<BarCharts />, document.getElementById("root"));
