@@ -7,6 +7,9 @@ App is more like "component library" ... most noticeable one is "UnsplashPhotos"
 I also added conditional render (that displays"HD"  Button on img elements) if img size === "thumb" (smallest size in api) . 
 When "HD" Button is clicked -->selected image is than re-remdered in Full HD size.
 
+Table +Chart rendering section:
+Backend (API ) is set up only for dev/testing currently (hosted on ISS) and CORS is used.
+
 Preview:
 
 ![alt-text](https://github.com/dommyrock/React-multipleComponents/blob/master/chrome-capture-graphs.gif)
