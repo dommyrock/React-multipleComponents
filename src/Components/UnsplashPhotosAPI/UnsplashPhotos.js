@@ -111,7 +111,7 @@ class UnsplashPhotos extends React.Component {
   //make same api (filter our single one by img id)--->assign it to state copy-> ...prevstate
   handleHdClick = (id, imgIndex, size) => {
     size = "regular";
-    console.log(`HD was clicked ....TODO API call with this Img ID :${id}--INDEX Of:${imgIndex}---size:${size}`);
+    console.log(`HD was clicked ....Img ID :${id}--INDEX Of:${imgIndex}---size:${size}`);
 
     fetch(
       `${this.state.apiUrl}/?per_page=${this.state.imgCount}&query=${this.state.searchKeyword}&client_id=${

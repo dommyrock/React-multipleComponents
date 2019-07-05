@@ -96,7 +96,7 @@ export default class PieCharts extends React.Component {
             "rgba(255, 206, 86, 0.2)",
             "rgba(75, 192, 192, 0.2)",
             "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
+            "rgba(21, 220, 122, 0.2)",
             "rgba(0, 247, 247, 0.15)",
             "rgba(245, 66, 66, 0.788)",
             "rgba(250, 227, 17, 0.788)",
@@ -135,9 +135,11 @@ export default class PieCharts extends React.Component {
                     stacked: true
                   }
                 ]
-              }
+              },
+              legend: null
             }}
           />
+          <br />
           <HorizontalBar
             data={data}
             options={{
@@ -152,12 +154,13 @@ export default class PieCharts extends React.Component {
                     stacked: true
                   }
                 ]
-              }
+              },
+              legend: null
             }}
           />
         </>
         <VisibilitySensor onChange={this.handleVisibility}>
-          <h2>Pie charts</h2>
+          <h2>Pie charts(animations trigger when in view)</h2>
         </VisibilitySensor>
         {visibility && (
           <>
