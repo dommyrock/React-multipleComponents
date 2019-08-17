@@ -35,8 +35,43 @@ export default class BeginnerComponents extends React.Component {
 }
 //fetch components to render
 function ComponentsToRender() {
+  //  Example of modifying child value in state of []
+
+  // this.state = {
+  //       input:'',
+  //      recipeList :
+  //       [{
+  //         recipe: "Tacos",
+  //         directions: "make tacos",
+  //         ingredients: ["meat"]
+  //       },
+  //       {
+  //         recipe: "pizza",
+  //         directions: "bake",
+  //         ingredients: ["dough"]
+  //       }]
+  //       ......
+
+  // ) For the handleSubmit method, you are trying to update the state of a nested array.
+  //  You can not write: recipeList[0].recipe: newRecipe, but you first create a copy of
+  //  the full recipeList array in this.state and the modify the recipe value of the first
+  // element of the new copied array and then assign this modified array back to
+  //  this.state.recipeList.
+  // Also, you need to make sure you set the input property back to a blank string,
+  //  so after clicking Submit, the textbox is empty.
+
+  //   handleSubmit() {
+  //     const recipeList = [...this.state.recipeList];
+  //     recipeList[0].recipe = this.state.input;
+  //     this.setState({
+  //       recipeList,
+  //       input: ""
+  //     });
+  //   }"
+
   return (
     <div>
+      <code>placehokders</code>
       <AppContact />
       <PunchLine />
       <Products />
