@@ -15,7 +15,6 @@ import Forms from "./Forms";
 import Form from "./Components/Form/Form";
 import MemeApp from "./Components/MemeGenerator/MemeApp";
 import UnsplashPhotos from "./Components/UnsplashPhotosAPI/UnsplashPhotos";
-import ChatApp from "./Components/SlackChatApp/ChatApp";
 import FileUploadApp from "./Components/FileUploader/FileUploadApp";
 import AutocompleteTextbox from "./Components/AutoCompleteTextbox/AutocompleteTextbox";
 import BarCharts from "./Components/CsvFileApi/BarCharts";
