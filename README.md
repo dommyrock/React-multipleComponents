@@ -8,7 +8,7 @@ I also added conditional render (that displays"HD"  Button on img elements) if i
 When "HD" Button is clicked -->selected image is than re-renderd in Full HD size.
 
 Table +Chart rendering section:
-Backend (API ) is set up only for dev/testing currently (hosted by "CsvFileUpload-MVC" App on ISS) and CORS is used, so those components wont render or have data in them until hosted locally.
+Backend (API ) is set up only for dev/testing currently (hosted by "CsvFileUpload-MVC" App on ISS) and CORS is used, so those components wont render or have data in them until backend is hosted locally.
 
 Preview:
 
